@@ -1,4 +1,3 @@
-from email import message
 import uvicorn
 from fastapi import FastAPI, Form
 from pydantic import BaseModel
@@ -10,6 +9,8 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 app = FastAPI()
 
+project_path = os.path.dirname(os.path.realpath(__file__))
+
 model = None
 utils = None
 
@@ -20,7 +21,7 @@ class PredictRB(BaseModel):
 
 def load_local_model():
     global model
-    model = keras.models.load_model('model/book.hdf5')
+    model = keras.models.load_model('{}/model/book.hdf5'.format(project_path))
 
 def load_utils():
     global utils

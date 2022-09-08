@@ -14,6 +14,8 @@ import numpy as np
 
 app = FastAPI()
 
+project_path = os.path.dirname(os.path.realpath(__file__))
+
 model = None
 
 class PredictRB(BaseModel):
@@ -23,7 +25,7 @@ class PredictRB(BaseModel):
 
 def load_local_model():
     global model
-    model = keras.models.load_model('model/faces.h5', custom_objects={"recall_metric": recall_metric, "precision_metric": precision_metric, "f1_metric": f1_metric })
+    model = keras.models.load_model('{}/model/faces.h5'.format(project_path), custom_objects={"recall_metric": recall_metric, "precision_metric": precision_metric, "f1_metric": f1_metric })
 
 @app.post("/predict/")
 async def predict(image: UploadFile = File(...)):
