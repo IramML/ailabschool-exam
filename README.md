@@ -16,8 +16,9 @@ This model is used to autocomplete text. The model was trained using a Nietzsche
 [Docker Hub](https://hub.docker.com/repository/docker/iramml/autocomplete-book)
 
 ### Climate forecast
-This project was builded to predict the climate. The model was trained using the jena climate dataset and the model is made of recurrent neuronal networks (GRU and LSTM).
+This project was builded to predict the climate. The model was trained using the jena climate dataset and the model is made of recurrent neuronal networks (LSTM).
 
+[Docker Hub](https://hub.docker.com/repository/docker/iramml/jena-climate)
 
 ## Getting Started
 
